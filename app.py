@@ -12,6 +12,7 @@ from langchain.callbacks import get_openai_callback
 
 
 def extract_text_from_pdf(pdf_reader):
+    """Extracts text from PDF in pages and returns it as a string"""
     text = ""
     for page in pdf_reader.pages:
         text += page.extract_text()
@@ -32,6 +33,7 @@ def build_knowledge_base(text):
 
 
 def prompt_user_for_question():
+    """Gets user query/question from Streamlit input field"""
     user_question = st.text_input("Ask a question about your PDF:")
     return user_question
 
